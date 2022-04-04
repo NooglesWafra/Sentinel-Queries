@@ -17,7 +17,7 @@ mfahistory
     | where AuthenticationRequirement == "multiFactorAuthentication"
     | extend AuthMethod = tostring(MfaDetail.authMethod)
     | where isnotempty(AuthMethod)
-    | distinct 
+    | extend 
         UserPrincipalName,
         AuthMethod,
         AppDisplayName,
